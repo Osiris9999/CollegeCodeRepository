@@ -20,7 +20,7 @@ h2 {
     color: #007bff;
     margin-bottom: 30px;
 }
- 
+
 .input-group {
     margin-bottom: 20px;
 }
@@ -43,7 +43,18 @@ h2 {
     outline: none;
     border-color: #007bff;
 }
- 
+
+.btn-container {
+    background: linear-gradient(to right, black 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .5s ease-out;
+}
+
+.btn-container:hover {
+    background-position: left bottom;
+  }
+
 .btn {
     width: 100%;
     padding: 12px;
@@ -52,24 +63,56 @@ h2 {
     color: #fff;
     border-radius: 3px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    /* transition: background-color 0.3s; */
+
+    text-align: center;
+    font-size: 16px;
+    line-height: 30px; 
+    color: black;
+    transition: all .6s ease-out;
+    display: block;
+  
+
+
 }
  
 .btn:hover {
     background-color: #0056b3;
-}
- 
-.forgot-password {
-    text-align: center;
-    margin-top: 10px;
+    color: white;  
 }
  
 .forgot-password a {
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+    text-decoration: none;
+    padding-top: 20px;
+}
+ 
+/* .forgot-password a {
     text-decoration: none;
     color: #007bff;
 }
  
 .forgot-password a:hover {
     text-decoration: underline;
-}
- 
+} */
+
+.forgot-password a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    border-radius: 5px;
+    height: 0.05em;
+    bottom: 0;
+    left: 0;
+    background: currentcolor;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  .forgot-password a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
